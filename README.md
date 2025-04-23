@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Weather App
 
 A sleek weather forecasting app built with React and modern APIs. Enter any city and get the **current weather** plus a **7-day forecast** — all displayed in a clean, responsive UI.
@@ -40,5 +39,3 @@ api_key=your_api_key
 ```bash
 npm run dev
 ```
-=======
->>>>>>> 770c2fd (env)

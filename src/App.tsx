@@ -38,15 +38,17 @@ function App() {
     setWeather(null);
 
     try{
-      const response=await axios.get<any>(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next7days?unitGroup=us&key=LX4MDQG2VJ9MEBM8JWH8AQ8EM&contentType=json`)
-      // console.log(response)
+      console.log("api key: ",process.env.api_key)
+      const apiKey=process.env.api_key;
+      const response=await axios.get<any>(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next7days?unitGroup=us&key=${apiKey}&contentType=json`)
+      console.log(response)
 
       if(response.status!==200){
         throw new Error('Failed to fetch weather data')
       }
 
       const data = response.data;
-      // console.log(data);
+      console.log(data);
       const current = data.currentConditions;
 
       const weatherData= {

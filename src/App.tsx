@@ -38,10 +38,10 @@ function App() {
     setWeather(null);
 
     try{
-      console.log("api key: ",process.env.api_key)
-      const apiKey=process.env.api_key;
+      const apiKey=import.meta.env.VITE_api_key;
+      // console.log(apiKey)
       const response=await axios.get<any>(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next7days?unitGroup=us&key=${apiKey}&contentType=json`)
-      console.log(response)
+      // console.log(response)
 
       if(response.status!==200){
         throw new Error('Failed to fetch weather data')
